@@ -25,6 +25,8 @@
             display: flex;
             align-items: center;
             gap: 20px;
+            width: 90%; /* Biar gak mentok banget ke pinggir HP */
+            justify-content: center;
         }
         .boxer-icon {
             font-size: 8rem;
@@ -62,9 +64,21 @@
             0% { transform: translateX(0); opacity: 1; border-right: 5px solid #ff1e1e; }
             100% { transform: translateX(20px); opacity: 0.9; border-right: none; text-shadow: 0 0 10px rgba(255, 30, 30, 0.4); }
         }
+
+        /* --- PERBAIKAN UNTUK HP (MOBILE) --- */
         @media (max-width: 768px) {
-            .boxing-text { font-size: 2rem; letter-spacing: 2px; }
-            .boxer-icon { font-size: 4rem; left: -60px; }
+            .boxing-text { 
+                font-size: 6.5vw; /* Ukuran font otomatis ngikutin lebar layar HP */
+                letter-spacing: 1px; /* Spasi antar huruf dirapetin dikit biar muat */
+                border-right-width: 3px;
+            }
+            .boxer-icon { 
+                font-size: 12vw; /* Ukuran icon ngikutin layar */
+                left: -40px; 
+            }
+            .boxing-intro-container {
+                gap: 5px;
+            }
         }
     </style>
 </head>
