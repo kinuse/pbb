@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Persatuan Boxing Bogor | Official Website</title>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="intro-overlay">
+        <iframe src="boxing_intro.html" style="width:100%; height:100vh; border:none;"></iframe>
+    </div>
+
+    <div id="main-content" style="display: none;">
+        <nav class="navbar">
+            <div class="container">
+                <div class="logo">BOXING<span>BOGOR</span></div>
+                <ul class="nav-links">
+                    <li><a href="#home">Beranda</a></li>
+                    <li><a href="#about">Tentang</a></li>
+                    <li><a href="#program">Program</a></li>
+                    <li><a href="https://wa.me/6282123931571" class="btn-nav">Gabung Sekarang</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <section id="home" class="hero">
+            <div class="hero-overlay"></div>
+            <div class="hero-content" data-aos="fade-up" data-aos-duration="1200">
+                <h4>BOGOR PRIDE - FIGHTING SPIRIT</h4>
+                <h1>JADILAH JUARA DI <br><span>RING SEJATI</span></h1>
+                <p>Wadah resmi pembinaan atlet tinju di Bogor. Berlatih dengan teknik yang benar, mental baja, dan disiplin tinggi.</p>
+                <div class="hero-btns">
+                    <a href="#program" class="btn-primary">Lihat Program</a>
+                    <a href="https://wa.me/6282123931571" class="btn-outline">Tanya Jadwal</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about">
+            <div class="container">
+                <div class="about-grid">
+                    <div class="about-text" data-aos="fade-right">
+                        <h2>MENGAPA MEMILIH <span>KAMI?</span></h2>
+                        <p>Persatuan Boxing Bogor bukan sekadar tempat latihan biasa. Kami adalah komunitas yang fokus pada pengembangan karakter, fisik, dan prestasi di dunia tinju nasional.</p>
+                        <ul class="features">
+                            <li><i class="fas fa-check-circle"></i> Pelatih Berlisensi & Berpengalaman</li>
+                            <li><i class="fas fa-check-circle"></i> Peralatan Standar Kompetisi</li>
+                            <li><i class="fas fa-check-circle"></i> Program untuk Pemula hingga Atlet</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="program" class="program">
+            <div class="container">
+                <div class="section-title" data-aos="fade-up">
+                    <h2>PROGRAM <span>LATIHAN</span></h2>
+                    <p>Pilih paket latihan yang sesuai dengan kebutuhan Anda</p>
+                </div>
+                <div class="program-grid">
+                    <div class="program-card" data-aos="zoom-in" data-aos-delay="100">
+                        <i class="fas fa-fist-raised"></i>
+                        <h3>KELAS REGULER</h3>
+                        <p>Deskripsi kelas umum, hobi, dan kebugaran di sini.</p>
+                    </div>
+                    <div class="program-card" data-aos="zoom-in" data-aos-delay="200">
+                        <i class="fas fa-trophy"></i>
+                        <h3>KELAS ATLET</h3>
+                        <p>Deskripsi kelas prestasi dan persiapan turnamen resmi di sini.</p>
+                    </div>
+                    <div class="program-card" data-aos="zoom-in" data-aos-delay="300">
+                        <i class="fas fa-user-shield"></i>
+                        <h3>PRIVATE CLASS</h3>
+                        <p>Deskripsi latihan intensif satu lawan satu dengan pelatih di sini.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <a href="https://wa.me/6282123931571" class="whatsapp-btn" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+            <span>Daftar Sekarang</span>
+        </a>
+
+        <footer>
+            <div class="container">
+                <p>&copy; 2026 Persatuan Boxing Bogor. Seluruh Hak Cipta Dilindungi.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Logika transisi dari Intro ke Main Content
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                document.getElementById('intro-overlay').style.opacity = '0';
+                setTimeout(function() {
+                    document.getElementById('intro-overlay').style.display = 'none';
+                    const mainContent = document.getElementById('main-content');
+                    mainContent.style.display = 'block';
+                    mainContent.classList.add('page-fade-in');
+                    AOS.init({ once: true });
+                }, 500); // Waktu transisi fade out
+            }, 4500); // Tampil selama 4.5 detik
+        });
+    </script>
+</body>
+</html>
