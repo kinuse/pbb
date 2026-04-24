@@ -2,114 +2,636 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="description" content="Persatuan Boxing Bogor — Wadah resmi pembinaan atlet tinju di Bogor. Berlatih dengan teknik benar, mental baja, dan disiplin tinggi.">
     <title>Persatuan Boxing Bogor | Official Website</title>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;600;700&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Stylesheet -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+    <!-- ===================================================
+         INTRO OVERLAY
+    =================================================== -->
     <div id="intro-overlay">
-        <iframe src="boxing_intro.html" style="width:100%; height:100vh; border:none;"></iframe>
+        <iframe src="boxing_intro.html" title="Intro Animation" scrolling="no"></iframe>
     </div>
 
-    <div id="main-content" style="display: none;">
-        <nav class="navbar">
-            <div class="container">
-                <div class="logo">BOXING<span>BOGOR</span></div>
-                <ul class="nav-links">
-                    <li><a href="#home">Beranda</a></li>
-                    <li><a href="#about">Tentang</a></li>
-                    <li><a href="#program">Program</a></li>
-                    <li><a href="https://wa.me/6282123931571" class="btn-nav">Gabung Sekarang</a></li>
-                </ul>
-            </div>
+    <!-- ===================================================
+         MAIN CONTENT
+    =================================================== -->
+    <div id="main-content">
+
+        <!-- ===== NAVBAR ===== -->
+        <nav class="navbar" id="navbar">
+            <a href="#home" class="nav-logo">BOXING<em>BOGOR</em></a>
+
+            <ul class="nav-links">
+                <li><a href="#tentang">Tentang</a></li>
+                <li><a href="#program">Program</a></li>
+                <li><a href="#pelatih">Pelatih</a></li>
+                <li><a href="#kontak">Jadwal</a></li>
+                <li><a href="https://wa.me/6282123931571" class="btn-nav-cta" target="_blank" rel="noopener">Daftar Sekarang</a></li>
+            </ul>
+
+            <button class="nav-ham" id="ham" aria-label="Toggle menu" onclick="toggleMenu()">
+                <span class="ham-line"></span>
+                <span class="ham-line"></span>
+                <span class="ham-line"></span>
+            </button>
         </nav>
 
-        <section id="home" class="hero">
-            <div class="hero-overlay"></div>
-            <div class="hero-content" data-aos="fade-up" data-aos-duration="1200">
-                <h4>BOGOR PRIDE - FIGHTING SPIRIT</h4>
-                <h1>JADILAH JUARA DI <br><span>RING SEJATI</span></h1>
-                <p>Wadah resmi pembinaan atlet tinju di Bogor. Berlatih dengan teknik yang benar, mental baja, dan disiplin tinggi.</p>
-                <div class="hero-btns">
-                    <a href="#program" class="btn-primary">Lihat Program</a>
-                    <a href="https://wa.me/6282123931571" class="btn-outline">Tanya Jadwal</a>
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="#tentang"  onclick="closeMenu()">Tentang Kami</a>
+            <a href="#program"  onclick="closeMenu()">Program Latihan</a>
+            <a href="#pelatih"  onclick="closeMenu()">Tim Pelatih</a>
+            <a href="#kontak"   onclick="closeMenu()">Jadwal &amp; Lokasi</a>
+            <a href="https://wa.me/6282123931571" class="mob-cta" target="_blank" rel="noopener">→ Daftar Sekarang</a>
+        </div>
+
+        <!-- ===== HERO ===== -->
+        <section class="hero" id="home">
+            <div class="hero-bg"></div>
+            <div class="hero-grad"></div>
+            <div class="hero-grad2"></div>
+            <div class="hero-noise"></div>
+
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="badge-dot"></span>
+                    Pendaftaran Anggota Baru Dibuka
                 </div>
+
+                <h1 class="hero-h1">
+                    JADILAH<br>
+                    <span class="line2"><span class="stroke">SANG</span>JUARA</span>
+                </h1>
+
+                <p class="hero-p">Wadah resmi pembinaan atlet tinju Bogor. Berlatih dengan teknik benar, mental baja, dan disiplin tinggi bersama pelatih berlisensi nasional.</p>
+
+                <div class="hero-btns">
+                    <a href="#program" class="btn-red">
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="white" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.86L12 17.77 5.82 21 7 14.14 2 9.27l6.91-1.01z"/></svg>
+                        Lihat Program
+                    </a>
+                    <a href="https://wa.me/6282123931571" class="btn-ghost" target="_blank" rel="noopener">
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.138.559 4.136 1.528 5.87L.078 23.5l5.832-1.5A11.952 11.952 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22.154a10.154 10.154 0 01-5.192-1.425l-.372-.221-3.855.99 1.006-3.747-.242-.384A10.154 10.154 0 0112 1.846c5.693 0 10.308 4.615 10.308 10.308S17.693 22.154 12 22.154z"/></svg>
+                        Tanya via WhatsApp
+                    </a>
+                </div>
+            </div>
+
+            <!-- Stats -->
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-num" data-target="200">0+</span>
+                    <span class="stat-label">Anggota Aktif</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <span class="stat-num" data-target="47">0+</span>
+                    <span class="stat-label">Medali Diraih</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <span class="stat-num" data-target="6">0+</span>
+                    <span class="stat-label">Tahun Berdiri</span>
+                </div>
+            </div>
+
+            <!-- Scroll hint -->
+            <div class="scroll-hint">
+                <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
+                <span class="scroll-label">Scroll</span>
             </div>
         </section>
 
-        <section id="about" class="about">
-            <div class="container">
+        <!-- ===== MARQUEE ===== -->
+        <div class="marquee-wrap" aria-hidden="true">
+            <div class="marquee-track">
+                <span>Tinju</span><span class="marquee-dot">●</span>
+                <span>Bogor</span><span class="marquee-dot">●</span>
+                <span>Fighting Spirit</span><span class="marquee-dot">●</span>
+                <span>Disiplin &amp; Teknik</span><span class="marquee-dot">●</span>
+                <span>Persatuan Boxing Bogor</span><span class="marquee-dot">●</span>
+                <span>Kelas Reguler</span><span class="marquee-dot">●</span>
+                <span>Kelas Atlet</span><span class="marquee-dot">●</span>
+                <span>Private Class</span><span class="marquee-dot">●</span>
+                <!-- duplicate for seamless loop -->
+                <span>Tinju</span><span class="marquee-dot">●</span>
+                <span>Bogor</span><span class="marquee-dot">●</span>
+                <span>Fighting Spirit</span><span class="marquee-dot">●</span>
+                <span>Disiplin &amp; Teknik</span><span class="marquee-dot">●</span>
+                <span>Persatuan Boxing Bogor</span><span class="marquee-dot">●</span>
+                <span>Kelas Reguler</span><span class="marquee-dot">●</span>
+                <span>Kelas Atlet</span><span class="marquee-dot">●</span>
+                <span>Private Class</span><span class="marquee-dot">●</span>
+            </div>
+        </div>
+
+        <!-- ===== ABOUT ===== -->
+        <section id="tentang" class="section-wrap about-bg">
+            <div class="section-inner">
                 <div class="about-grid">
-                    <div class="about-text" data-aos="fade-right">
-                        <h2>MENGAPA MEMILIH <span>KAMI?</span></h2>
-                        <p>Persatuan Boxing Bogor bukan sekadar tempat latihan biasa. Kami adalah komunitas yang fokus pada pengembangan karakter, fisik, dan prestasi di dunia tinju nasional.</p>
-                        <ul class="features">
-                            <li><i class="fas fa-check-circle"></i> Pelatih Berlisensi & Berpengalaman</li>
-                            <li><i class="fas fa-check-circle"></i> Peralatan Standar Kompetisi</li>
-                            <li><i class="fas fa-check-circle"></i> Program untuk Pemula hingga Atlet</li>
+
+                    <!-- Left: image -->
+                    <div class="about-left reveal-left">
+                        <div class="about-img-wrap">
+                            <img src="https://images.unsplash.com/photo-1517438476312-10d79c077509?q=80&w=600" alt="Latihan tinju di Boxing Bogor" loading="lazy">
+                            <div class="about-img-overlay"></div>
+                        </div>
+                        <div class="about-badge">
+                            <span>#1</span>
+                            <small>Boxing Club Bogor</small>
+                        </div>
+                    </div>
+
+                    <!-- Right: text -->
+                    <div class="about-right reveal-right">
+                        <div class="section-label">Tentang Kami</div>
+                        <h2 class="section-title">MENGAPA <span>KAMI?</span></h2>
+                        <p class="about-desc">Persatuan Boxing Bogor bukan sekadar tempat latihan biasa. Kami adalah komunitas yang fokus pada pengembangan karakter, fisik, dan prestasi di dunia tinju nasional — dengan track record medali di berbagai turnamen resmi.</p>
+
+                        <ul class="features-list">
+                            <li class="feat-item">
+                                <div class="feat-icon">
+                                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                                </div>
+                                <div class="feat-text">
+                                    <strong>Pelatih Berlisensi Nasional</strong>
+                                    <span>Berpengalaman 10+ tahun di dunia tinju profesional</span>
+                                </div>
+                            </li>
+                            <li class="feat-item">
+                                <div class="feat-icon">
+                                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.86L12 17.77 5.82 21 7 14.14 2 9.27z"/></svg>
+                                </div>
+                                <div class="feat-text">
+                                    <strong>Peralatan Standar Kompetisi</strong>
+                                    <span>Ring, gloves, heavy bag, speed ball, dan fasilitas lengkap</span>
+                                </div>
+                            </li>
+                            <li class="feat-item">
+                                <div class="feat-icon">
+                                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+                                </div>
+                                <div class="feat-text">
+                                    <strong>Semua Level Diterima</strong>
+                                    <span>Pemula, hobi, hingga atlet kompetisi profesional</span>
+                                </div>
+                            </li>
                         </ul>
                     </div>
+
                 </div>
             </div>
         </section>
 
-        <section id="program" class="program">
-            <div class="container">
-                <div class="section-title" data-aos="fade-up">
-                    <h2>PROGRAM <span>LATIHAN</span></h2>
-                    <p>Pilih paket latihan yang sesuai dengan kebutuhan Anda</p>
+        <!-- ===== PROGRAMS ===== -->
+        <section id="program" class="section-wrap prog-bg">
+            <div class="section-inner">
+
+                <div class="programs-head reveal">
+                    <div>
+                        <div class="section-label">Program Latihan</div>
+                        <h2 class="section-title">PILIH <span>KELASMU</span></h2>
+                    </div>
+                    <a href="https://wa.me/6282123931571" class="btn-ghost" target="_blank" rel="noopener">Konsultasi Gratis →</a>
                 </div>
+
                 <div class="program-grid">
-                    <div class="program-card" data-aos="zoom-in" data-aos-delay="100">
-                        <i class="fas fa-fist-raised"></i>
-                        <h3>KELAS REGULER</h3>
-                        <p>Deskripsi kelas umum, hobi, dan kebugaran di sini.</p>
+
+                    <!-- Card 1: Reguler -->
+                    <div class="prog-card reveal">
+                        <div class="prog-thumb">
+                            <img src="https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?q=80&w=600" alt="Kelas Reguler" loading="lazy">
+                            <span class="prog-num">01</span>
+                            <span class="prog-tag">Populer</span>
+                        </div>
+                        <div class="prog-body">
+                            <div class="prog-title">Kelas Reguler</div>
+                            <p class="prog-desc">Program umum untuk kebugaran dan hobi. Cocok untuk semua usia yang ingin belajar teknik dasar tinju sambil meningkatkan kebugaran fisik.</p>
+                            <ul class="prog-features">
+                                <li>Teknik dasar pukulan &amp; footwork</li>
+                                <li>Latihan conditioning &amp; cardio</li>
+                                <li>3x seminggu (Senin, Rabu, Jumat)</li>
+                                <li>Termasuk akses fasilitas gym</li>
+                            </ul>
+                        </div>
+                        <div class="prog-footer">
+                            <span class="prog-price">Rp 350K/bln</span>
+                            <a href="https://wa.me/6282123931571" class="prog-cta" target="_blank" rel="noopener">Daftar <span>→</span></a>
+                        </div>
                     </div>
-                    <div class="program-card" data-aos="zoom-in" data-aos-delay="200">
-                        <i class="fas fa-trophy"></i>
-                        <h3>KELAS ATLET</h3>
-                        <p>Deskripsi kelas prestasi dan persiapan turnamen resmi di sini.</p>
+
+                    <!-- Card 2: Atlet -->
+                    <div class="prog-card reveal" style="transition-delay:.12s">
+                        <div class="prog-thumb">
+                            <img src="https://images.unsplash.com/photo-1607962837359-5e7e89f86776?q=80&w=600" alt="Kelas Atlet" loading="lazy">
+                            <span class="prog-num">02</span>
+                            <span class="prog-tag gold">Prestasi</span>
+                        </div>
+                        <div class="prog-body">
+                            <div class="prog-title">Kelas Atlet</div>
+                            <p class="prog-desc">Program intensif untuk persiapan kompetisi resmi. Dilatih langsung oleh coach berlisensi nasional dengan program periodisasi terstruktur.</p>
+                            <ul class="prog-features">
+                                <li>Persiapan turnamen resmi KONI</li>
+                                <li>Sparring &amp; strategi pertandingan</li>
+                                <li>5x seminggu intensif</li>
+                                <li>Nutrisi &amp; pemulihan atlet</li>
+                            </ul>
+                        </div>
+                        <div class="prog-footer">
+                            <span class="prog-price">Rp 600K/bln</span>
+                            <a href="https://wa.me/6282123931571" class="prog-cta" target="_blank" rel="noopener">Daftar <span>→</span></a>
+                        </div>
                     </div>
-                    <div class="program-card" data-aos="zoom-in" data-aos-delay="300">
-                        <i class="fas fa-user-shield"></i>
-                        <h3>PRIVATE CLASS</h3>
-                        <p>Deskripsi latihan intensif satu lawan satu dengan pelatih di sini.</p>
+
+                    <!-- Card 3: Private -->
+                    <div class="prog-card reveal" style="transition-delay:.24s">
+                        <div class="prog-thumb">
+                            <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?q=80&w=600" alt="Private Class" loading="lazy">
+                            <span class="prog-num">03</span>
+                            <span class="prog-tag dark">Eksklusif</span>
+                        </div>
+                        <div class="prog-body">
+                            <div class="prog-title">Private Class</div>
+                            <p class="prog-desc">Latihan one-on-one intensif bersama pelatih pribadi. Program disesuaikan 100% dengan tujuan dan kemampuan spesifik Anda.</p>
+                            <ul class="prog-features">
+                                <li>Jadwal fleksibel sesuai kesepakatan</li>
+                                <li>Program personal yang disesuaikan</li>
+                                <li>Fokus cepat pada kelemahan</li>
+                                <li>Laporan progres mingguan</li>
+                            </ul>
+                        </div>
+                        <div class="prog-footer">
+                            <span class="prog-price">Hubungi Kami</span>
+                            <a href="https://wa.me/6282123931571" class="prog-cta" target="_blank" rel="noopener">Tanya <span>→</span></a>
+                        </div>
                     </div>
+
                 </div>
             </div>
         </section>
 
-        <a href="https://wa.me/6282123931571" class="whatsapp-btn" target="_blank">
-            <i class="fab fa-whatsapp"></i>
+        <!-- ===== TRAINERS ===== -->
+        <section id="pelatih" class="section-wrap trainers-bg">
+            <div class="section-inner">
+                <div class="section-label reveal">Tim Pelatih</div>
+                <h2 class="section-title reveal">DILATIH OLEH <span>YANG TERBAIK</span></h2>
+
+                <div class="trainers-grid">
+
+                    <div class="trainer-card reveal">
+                        <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=600" alt="Coach Andri Gunawan" loading="lazy">
+                        <div class="trainer-overlay"></div>
+                        <div class="trainer-info">
+                            <div class="trainer-role">Head Coach</div>
+                            <div class="trainer-name">Andri Gunawan</div>
+                            <div class="trainer-badges">
+                                <span class="t-badge">Lisensi Nasional</span>
+                                <span class="t-badge">15 Tahun</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="trainer-card reveal" style="transition-delay:.1s">
+                        <img src="https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?q=80&w=600" alt="Coach Reza Pratama" loading="lazy">
+                        <div class="trainer-overlay"></div>
+                        <div class="trainer-info">
+                            <div class="trainer-role">Assistant Coach</div>
+                            <div class="trainer-name">Reza Pratama</div>
+                            <div class="trainer-badges">
+                                <span class="t-badge">Eks Atlet PON</span>
+                                <span class="t-badge">Strength &amp; Conditioning</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="trainer-card reveal" style="transition-delay:.2s">
+                        <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=600" alt="Coach Sari Fitriani" loading="lazy">
+                        <div class="trainer-overlay"></div>
+                        <div class="trainer-info">
+                            <div class="trainer-role">Fitness &amp; Conditioning</div>
+                            <div class="trainer-name">Sari Fitriani</div>
+                            <div class="trainer-badges">
+                                <span class="t-badge">Certified PT</span>
+                                <span class="t-badge">Nutrisi Olahraga</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="trainer-card reveal" style="transition-delay:.3s">
+                        <img src="https://images.unsplash.com/photo-1538805060514-97d9cc17730c?q=80&w=600" alt="Coach Bima Sakti" loading="lazy">
+                        <div class="trainer-overlay"></div>
+                        <div class="trainer-info">
+                            <div class="trainer-role">Youth Coach</div>
+                            <div class="trainer-name">Bima Sakti</div>
+                            <div class="trainer-badges">
+                                <span class="t-badge">Junior Program</span>
+                                <span class="t-badge">Psikologi Olahraga</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== TESTIMONIALS ===== -->
+        <section class="section-wrap testi-bg">
+            <div class="section-inner">
+                <div class="section-label reveal">Testimoni</div>
+                <h2 class="section-title reveal">KATA <span>MEREKA</span></h2>
+
+                <div class="testi-grid">
+
+                    <div class="testi-card reveal">
+                        <div class="testi-quote">"</div>
+                        <div class="testi-stars">
+                            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+                        </div>
+                        <p class="testi-text">Bergabung 8 bulan lalu sebagai pemula total. Sekarang sudah bisa sparring dan bahkan ikut turnamen pertama saya. Coach di sini sabar banget ngajarin dari dasar.</p>
+                        <div class="testi-author">
+                            <div class="testi-avatar">RH</div>
+                            <div>
+                                <div class="testi-name">Rizky Hamdani</div>
+                                <div class="testi-when">Anggota sejak 2024</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testi-card reveal" style="transition-delay:.1s">
+                        <div class="testi-quote">"</div>
+                        <div class="testi-stars">
+                            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+                        </div>
+                        <p class="testi-text">Anak saya umur 13 tahun mulai latihan di sini. Selain teknik tinju, disiplinnya jauh meningkat dan lebih fokus di sekolah. Terima kasih Boxing Bogor!</p>
+                        <div class="testi-author">
+                            <div class="testi-avatar">DW</div>
+                            <div>
+                                <div class="testi-name">Dewi Wulandari</div>
+                                <div class="testi-when">Orang tua atlet junior</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testi-card reveal" style="transition-delay:.2s">
+                        <div class="testi-quote">"</div>
+                        <div class="testi-stars">
+                            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+                        </div>
+                        <p class="testi-text">Private class-nya worth it banget. Dalam 2 bulan progres saya jauh lebih cepat dibanding latihan grup. Coach Andri tahu persis kelemahan saya di mana.</p>
+                        <div class="testi-author">
+                            <div class="testi-avatar">AP</div>
+                            <div>
+                                <div class="testi-name">Ariel Prabowo</div>
+                                <div class="testi-when">Kelas Private, 2025</div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== CTA BAND ===== -->
+        <div class="cta-band">
+            <div class="section-label">Mulai Sekarang</div>
+            <h2 class="section-title">SIAP NAIK <span>RING?</span></h2>
+            <p>Jadilah bagian dari keluarga besar Persatuan Boxing Bogor. Sesi pertama <strong>gratis</strong> untuk anggota baru!</p>
+            <div class="cta-btns">
+                <a href="https://wa.me/6282123931571" class="btn-red" target="_blank" rel="noopener">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="white" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.138.559 4.136 1.528 5.87L.078 23.5l5.832-1.5A11.952 11.952 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22.154a10.154 10.154 0 01-5.192-1.425l-.372-.221-3.855.99 1.006-3.747-.242-.384A10.154 10.154 0 0112 1.846c5.693 0 10.308 4.615 10.308 10.308S17.693 22.154 12 22.154z"/></svg>
+                    Daftar via WhatsApp
+                </a>
+                <a href="#program" class="btn-ghost">Lihat Program →</a>
+            </div>
+        </div>
+
+        <!-- ===== CONTACT ===== -->
+        <section id="kontak" class="section-wrap contact-bg">
+            <div class="section-inner">
+                <div class="contact-grid">
+
+                    <!-- Left: info -->
+                    <div class="reveal-left">
+                        <div class="section-label">Kontak &amp; Lokasi</div>
+                        <h2 class="section-title">TEMUKAN <span>KAMI</span></h2>
+                        <p class="contact-desc">Kami berlokasi di jantung kota Bogor, mudah dijangkau dari berbagai arah. Datang langsung atau hubungi kami terlebih dahulu.</p>
+
+                        <div class="contact-items">
+                            <div class="contact-item">
+                                <div class="contact-ico">
+                                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                                </div>
+                                <div>
+                                    <div class="contact-label">Alamat</div>
+                                    <div class="contact-val">Jl. Pahlawan No. 12, Bogor Tengah, Kota Bogor</div>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-ico">
+                                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                                </div>
+                                <div>
+                                    <div class="contact-label">WhatsApp</div>
+                                    <div class="contact-val">+62 821 2393 1571</div>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-ico">
+                                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
+                                </div>
+                                <div>
+                                    <div class="contact-label">Jam Operasional</div>
+                                    <div class="contact-val">Senin – Sabtu: 06.00 – 21.00 WIB</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right: schedule -->
+                    <div class="reveal-right">
+                        <div class="schedule-box">
+                            <div class="schedule-head">🥊 &nbsp;Jadwal Latihan Mingguan</div>
+                            <table class="schedule-table">
+                                <tbody>
+                                    <tr>
+                                        <td><span class="hari">Senin, Rabu &amp; Jumat</span><span class="sesi">Kelas Reguler Pagi</span></td>
+                                        <td>06.00 – 07.30</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="hari">Senin, Rabu &amp; Jumat</span><span class="sesi">Kelas Reguler Sore</span></td>
+                                        <td>16.00 – 17.30</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="hari">Selasa &amp; Kamis</span><span class="sesi">Kelas Atlet Pagi</span></td>
+                                        <td>07.00 – 09.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="hari">Selasa, Kamis &amp; Sabtu</span><span class="sesi">Kelas Atlet Sore</span></td>
+                                        <td>15.00 – 17.30</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="hari">Sabtu</span><span class="sesi">Sparring &amp; Teknik Lanjutan</span></td>
+                                        <td>08.00 – 10.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="hari">Fleksibel</span><span class="sesi">Private Class (via booking)</span></td>
+                                        <td>Sesuai Janji</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== FOOTER ===== -->
+        <footer class="footer">
+            <div class="footer-logo">BOXING<em>BOGOR</em></div>
+            <p class="footer-copy">© 2026 Persatuan Boxing Bogor. Seluruh Hak Cipta Dilindungi.</p>
+            <div class="footer-socials">
+                <a class="social-ico" href="#" aria-label="Instagram">
+                    <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                </a>
+                <a class="social-ico" href="https://wa.me/6282123931571" target="_blank" rel="noopener" aria-label="WhatsApp">
+                    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.138.559 4.136 1.528 5.87L.078 23.5l5.832-1.5A11.952 11.952 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22.154a10.154 10.154 0 01-5.192-1.425l-.372-.221-3.855.99 1.006-3.747-.242-.384A10.154 10.154 0 0112 1.846c5.693 0 10.308 4.615 10.308 10.308S17.693 22.154 12 22.154z"/></svg>
+                </a>
+                <a class="social-ico" href="#" aria-label="YouTube">
+                    <svg viewBox="0 0 24 24"><path d="M23.495 6.205a3.007 3.007 0 00-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 00.527 6.205a31.247 31.247 0 00-.522 5.805 31.247 31.247 0 00.522 5.783 3.007 3.007 0 002.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 002.088-2.088 31.247 31.247 0 00.5-5.783 31.247 31.247 0 00-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg>
+                </a>
+            </div>
+        </footer>
+
+        <!-- ===== FLOATING WA BUTTON ===== -->
+        <a href="https://wa.me/6282123931571" class="wa-fab" target="_blank" rel="noopener" aria-label="Chat WhatsApp">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.138.559 4.136 1.528 5.87L.078 23.5l5.832-1.5A11.952 11.952 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22.154a10.154 10.154 0 01-5.192-1.425l-.372-.221-3.855.99 1.006-3.747-.242-.384A10.154 10.154 0 0112 1.846c5.693 0 10.308 4.615 10.308 10.308S17.693 22.154 12 22.154z"/></svg>
             <span>Daftar Sekarang</span>
         </a>
 
-        <footer>
-            <div class="container">
-                <p>&copy; 2026 Persatuan Boxing Bogor. Seluruh Hak Cipta Dilindungi.</p>
-            </div>
-        </footer>
-    </div>
+    </div><!-- /#main-content -->
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- ===================================================
+         JAVASCRIPT
+    =================================================== -->
     <script>
-        // Logika transisi dari Intro ke Main Content
-        window.addEventListener('load', function() {
-            setTimeout(function() {
-                document.getElementById('intro-overlay').style.opacity = '0';
-                setTimeout(function() {
-                    document.getElementById('intro-overlay').style.display = 'none';
-                    const mainContent = document.getElementById('main-content');
-                    mainContent.style.display = 'block';
-                    mainContent.classList.add('page-fade-in');
-                    AOS.init({ once: true });
-                }, 500); // Waktu transisi fade out
-            }, 4500); // Tampil selama 4.5 detik
+        // ── 1. Intro Transition ──────────────────────────────
+        var overlay     = document.getElementById('intro-overlay');
+        var mainContent = document.getElementById('main-content');
+
+        function showMain() {
+            overlay.classList.add('hide');
+            setTimeout(function () {
+                overlay.style.display = 'none';
+                mainContent.classList.add('visible');
+                initScrollReveal();
+                initCounters();
+                AOS_init();
+            }, 800);
+        }
+
+        // Listen for postMessage from iframe (boxing_intro.html sends this at 3.2s)
+        window.addEventListener('message', function (e) {
+            if (e.data === 'intro-done') showMain();
         });
+
+        // Fallback: show main after 4s regardless
+        var introTimeout = setTimeout(showMain, 4000);
+        window.addEventListener('message', function () { clearTimeout(introTimeout); });
+
+        // ── 2. Navbar Scroll ────────────────────────────────
+        var navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', function () {
+            navbar.classList.toggle('scrolled', window.scrollY > 60);
+        }, { passive: true });
+
+        // ── 3. Mobile Menu ──────────────────────────────────
+        function toggleMenu() {
+            document.getElementById('mobileMenu').classList.toggle('open');
+            document.getElementById('ham').classList.toggle('active');
+        }
+        function closeMenu() {
+            document.getElementById('mobileMenu').classList.remove('open');
+            document.getElementById('ham').classList.remove('active');
+        }
+        // Close menu on outside click
+        document.addEventListener('click', function (e) {
+            var menu = document.getElementById('mobileMenu');
+            var ham  = document.getElementById('ham');
+            if (menu.classList.contains('open') && !menu.contains(e.target) && !ham.contains(e.target)) {
+                closeMenu();
+            }
+        });
+
+        // ── 4. Scroll Reveal ────────────────────────────────
+        function initScrollReveal() {
+            var els = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+            if (!('IntersectionObserver' in window)) {
+                els.forEach(function (el) { el.classList.add('visible'); });
+                return;
+            }
+            var io = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        io.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.12 });
+            els.forEach(function (el) { io.observe(el); });
+        }
+
+        // ── 5. Counter Animation ────────────────────────────
+        function initCounters() {
+            var nums = document.querySelectorAll('.stat-num[data-target]');
+            if (!('IntersectionObserver' in window)) {
+                nums.forEach(function (el) {
+                    el.textContent = el.getAttribute('data-target') + '+';
+                });
+                return;
+            }
+            var cio = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) {
+                        animateCount(entry.target, parseInt(entry.target.getAttribute('data-target')));
+                        cio.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+            nums.forEach(function (el) { cio.observe(el); });
+        }
+
+        function animateCount(el, target) {
+            var duration = 1800;
+            var step     = 16;
+            var steps    = duration / step;
+            var inc      = target / steps;
+            var cur      = 0;
+            var timer    = setInterval(function () {
+                cur = Math.min(cur + inc, target);
+                el.textContent = Math.round(cur) + '+';
+                if (cur >= target) clearInterval(timer);
+            }, step);
+        }
+
+        // ── 6. Minimal AOS-like (no external dep) ───────────
+        function AOS_init() {
+            // Already handled by initScrollReveal above.
+            // Add staggered delay support via data-delay attr if needed.
+        }
     </script>
+
 </body>
 </html>
